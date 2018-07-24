@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Listando Pessoas Juridicas</h1>
+      
+      <%= link_to 'Nova Pessoa Juridica', new_company_path, :class=> 'btn btn-primary' %>
+      <br>
+      <table class="table table-striped">
+        <tr>
+          <th>CNPJ</th>
+          <th>Razao Social</th>
+          <th>Nome Fantasia</th>
+          <th>Email</th>
+          <th>Atrativos Registrados</th>
+          <th></th>
+        </tr>
+      
+        <% @companies.each do |company| %>
+          <tr>
+            <td><%= company.cnpj %></td>
+            <td><%= company.social_name %></td>
+            <td><%= company.name %></td>
+            <td><%= company.email %></td>
+            <td><%= company.attractives.count %></td>
+            <td>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Opcoes
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <%= link_to 'Mostrar', company_path(company), :class=>"dropdown-item" %>
+                  <%= link_to 'Editar', edit_company_path(company), :class=>"dropdown-item" %>
+                  <%= link_to 'Excluir', company_path(company),
+                          method: :delete,
+                          data: { confirm: 'Tem certeza?' }, :class=>"dropdown-item" %>
+                </div>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

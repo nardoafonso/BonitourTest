@@ -1,0 +1,40 @@
+<%= form_with model: @company, local: true do |form| %>
+
+    <% if @company.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@company.errors.count, "erro") %> prohibited
+                this article from being saved:
+            </h2>
+            <ul>
+                <% @company.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label 'CNPJ:', :class=>'label-control' %><br>
+      <%= form.text_field :cnpj, :class=> 'form-control'  %>
+    </div>
+   
+    <div class="form-group">
+      <%= form.label 'Razao Social:' , :class=>'label-control' %><br>
+      <%= form.text_field :social_name, :class=> 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label 'Nome Fantasia:', :class=>'label-control' %><br>
+      <%= form.text_field :name, :class=> 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label 'Email:', :class=>'label-control' %><br>
+      <%= form.email_field :email, :class=> 'form-control' %>
+    </div>
+   
+    <p>
+      <%= form.submit :class=>'btn btn-primary' %>
+    </p>
+  <% end %>

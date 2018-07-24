@@ -1,0 +1,30 @@
+<p>
+<strong>Nome:</strong>
+<%= attractive.name %>
+</p>
+
+<p>
+<strong>Endereco:</strong>
+<%= attractive.address %>
+</p>
+
+<p>
+<strong>Duracao:</strong>
+<%= attractive.duration %>
+</p>
+
+<p>
+<strong>Capacidade Maxima de Pessoas:</strong>
+<%= attractive.capacity %>
+</p>
+
+<p>
+<strong>Valor do ingresso:</strong>
+<%= attractive.value %>
+</p>
+
+<p>
+  <%= link_to 'Excluir Atrativo', [attractive.company, attractive],
+               method: :delete,
+               data: { confirm: 'Tem certeza?' }, :class=>'btn btn-danger' %>
+</p>
