@@ -16,4 +16,4 @@ Then execute `docker-compose up` to deploy application
 
 Depending of your instalation `sudo` might be necessary
 
-Aplication will be avaible at [localhost:3000](localhost:3000)
+Aplication will be available at [localhost:3000](localhost:3000)
